@@ -4,7 +4,7 @@ import { Background } from "reactflow";
 import "reactflow/dist/style.css";
 import { askAI, saveData } from "../services/api";
 import toast from "react-hot-toast";
-// import ControlPanel from "./ControlPanel";
+
 
 // export default function FlowCanvas({ input, setInput, output, loading }) {
 //   // 🔹 Run AI
