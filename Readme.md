@@ -6,20 +6,21 @@ A full-stack MERN application that allows users to input a prompt, generate AI r
 
 ## 🚀 Features
 
-- 🧠 AI-powered responses using OpenRouter API  
-- 🔄 Interactive flow visualization with React Flow  
-- 💾 Save prompts & responses to MongoDB  
-- ⚡ Fast frontend using React (Vite)  
-- 🎨 Responsive UI with Tailwind CSS  
-- 🔔 Toast notifications (no alerts)  
-- 📋 Copy response feature  
-- 🧹 Clear input/output  
+- 🧠 AI-powered responses using OpenRouter API
+- 🔄 Interactive flow visualization with React Flow
+- 💾 Save prompts & responses to MongoDB
+- ⚡ Fast frontend using React (Vite)
+- 🎨 Responsive UI with Tailwind CSS
+- 🔔 Toast notifications (no alerts)
+- 📋 Copy response feature
+- 🧹 Clear input/output
 
 ---
 
 ## 🛠 Tech Stack
 
 ### Frontend:
+
 - React (Vite)
 - Tailwind CSS
 - React Flow
@@ -27,6 +28,7 @@ A full-stack MERN application that allows users to input a prompt, generate AI r
 - React Hot Toast
 
 ### Backend:
+
 - Node.js
 - Express.js
 - MongoDB (Mongoose)
@@ -34,14 +36,14 @@ A full-stack MERN application that allows users to input a prompt, generate AI r
 
 ---
 
-###  Clone Repository
+### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/mern-ai-flow.git
+git clone https://github.com/Ankitamishra17/mern-ai-flow-dashboard
 cd mern-ai-flow
 
 ##  Setup Instructions
-```bash
+
 Backend Setup
 
 cd backend
@@ -57,5 +59,6 @@ cd frontend
 npm install
 
 Run frontend:
-npm run dev
+npm run
+
 ```
