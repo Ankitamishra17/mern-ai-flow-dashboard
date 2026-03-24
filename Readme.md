@@ -17,7 +17,7 @@ A full-stack MERN application that allows users to input a prompt, generate AI r
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Frontend:
 
