@@ -1,4 +1,3 @@
-
 require("dotenv").config();
 
 const express = require("express");
@@ -13,8 +12,6 @@ router.post("/ask-ai", async (req, res) => {
     if (!prompt) {
       return res.status(400).json({ message: "Prompt is required" });
     }
-
-    console.log("API KEY:", process.env.OPENROUTER_API_KEY);
 
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
