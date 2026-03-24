@@ -1,23 +1,26 @@
+
+require("dotenv").config();
+
 const express = require("express");
 const router = express.Router();
 const axios = require("axios");
-const Prompt = require("../models/Prompt"); // ✅ IMPORT MODEL
+const Prompt = require("../models/Prompt");
 
-// 🔹 ASK AI ROUTE
 router.post("/ask-ai", async (req, res) => {
   try {
     const { prompt } = req.body;
+
+    if (!prompt) {
+      return res.status(400).json({ message: "Prompt is required" });
+    }
+
+    console.log("API KEY:", process.env.OPENROUTER_API_KEY);
 
     const response = await axios.post(
       "https://openrouter.ai/api/v1/chat/completions",
       {
         model: "openai/gpt-3.5-turbo",
-        messages: [
-          {
-            role: "user",
-            content: prompt,
-          },
-        ],
+        messages: [{ role: "user", content: prompt }],
       },
       {
         headers: {
@@ -44,24 +47,31 @@ router.post("/ask-ai", async (req, res) => {
   }
 });
 
-// 🔹 SAVE ROUTE (ADD THIS 👇)
 router.post("/save", async (req, res) => {
   try {
     const { prompt, response } = req.body;
 
-    const newData = new Prompt({
+    if (!prompt || !response) {
+      return res.status(400).json({
+        success: false,
+        message: "Prompt and response are required",
+      });
+    }
+
+    const newPrompt = new Prompt({
       prompt,
       response,
     });
 
-    await newData.save();
+    await newPrompt.save();
 
     res.json({
       success: true,
       message: "Saved successfully",
     });
   } catch (error) {
-    console.error(error);
+    console.error("SAVE ERROR:", error);
+
     res.status(500).json({
       success: false,
       message: "Save failed",

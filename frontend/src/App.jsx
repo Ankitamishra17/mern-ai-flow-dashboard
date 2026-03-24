@@ -1,19 +1,3 @@
-// import Navbar from "./components/Navbar";
-// import FlowCanvas from "./components/FlowCanvas";
-// import { Toaster } from "react-hot-toast";
-// import "./App.css";
-
-// function App() {
-//   return (
-//     <div className="min-h-screen bg-[#050706] text-[#f0fdf4]">
-//       <Toaster position="top-right" />
-//       <Navbar />
-//       <FlowCanvas />
-//     </div>
-//   );
-// }
-
-// export default App;
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import FlowCanvas from "./components/FlowCanvas";
@@ -26,7 +10,7 @@ function App() {
   const [output, setOutput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🔹 Run AI
+  // Run AI
   const runFlow = async () => {
     if (!input) return toast.error("Enter prompt");
 
@@ -42,7 +26,7 @@ function App() {
     }
   };
 
-  // 🔹 Save to DB
+  // Save to DB
   const save = async () => {
     if (!output) return toast.error("Nothing to save");
 
@@ -54,7 +38,7 @@ function App() {
     }
   };
 
-  // 🔹 Clear
+  // Clear
   const clear = () => {
     setInput("");
     setOutput("");
@@ -62,13 +46,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#050706] text-[#f0fdf4]">
-      {/* 🔔 Toast */}
-      <Toaster position="top-right" />
+      {/* Toast */}
+      <Toaster position="top-center" />
 
-      {/* 🔝 Navbar */}
       <Navbar runFlow={runFlow} save={save} clear={clear} loading={loading} />
-
-      {/* 🔄 Flow */}
       <FlowCanvas
         input={input}
         setInput={setInput}

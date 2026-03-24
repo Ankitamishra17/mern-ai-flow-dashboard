@@ -4,7 +4,7 @@ const API = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 });
 
-// If your .env = http://localhost:5000
+// If  .env = http://localhost:5000
 export const askAI = (prompt) =>
   API.post("/api/ask-ai", { prompt });
 
